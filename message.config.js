@@ -1,5 +1,6 @@
 const messages = {
     en: {
+        title: 'Portfolio of Debadeep Sen',
         greeting: 'Hello, my name is Debadeep and I am a software engineer',
         subheading: 'Welcome to my portfolio',
         footer: 'Full list on my website',
@@ -15,6 +16,7 @@ const messages = {
         ]
     },
     fr: {
+        title: 'Le portfolio de Debadeep Sen',
         greeting: 'Salut, je m\'appelle Debadeep et je suis ingénieur logiciel',
         subheading: 'Bienvenue dans mon portfolio',
         footer: 'Liste complète sur mon site',

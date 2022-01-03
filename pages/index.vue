@@ -36,6 +36,12 @@ export default {
     }
   },
 
+  head() {
+    return {
+      title: this.$t("title"),
+    };
+  },
+
   methods: {
     changeLocale(locale) {
       this.$i18n.locale = locale;
