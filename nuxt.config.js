@@ -1,4 +1,5 @@
-import messages from "./message.config"
+import en from "./locales/en"
+import fr from "./locales/fr"
 
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -43,7 +44,7 @@ export default {
         defaultLocale: 'en',
         vueI18n: {
           fallbackLocale: 'en',
-          messages
+          messages: { en, fr }
         }
       }
     ]
