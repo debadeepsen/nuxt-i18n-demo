@@ -20,7 +20,7 @@ const messages = {
         footer: 'Liste complète sur mon site',
         projects: [
             {
-                title: 'Simulateur des résultats des élections américaines',
+                title: 'Le simulateur des résultats des élections américaines',
                 link: 'https://usaelectionsim.softwarecradle.com/'
             },
             {
