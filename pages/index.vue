@@ -27,10 +27,19 @@
 </template>
 
 <script>
+const LS_KEY = "NUXT-I18N-LOCALE";
 export default {
+  mounted() {
+    let currentLocale = localStorage.getItem(LS_KEY);
+    if (currentLocale != null) {
+      this.changeLocale(currentLocale);
+    }
+  },
+
   methods: {
     changeLocale(locale) {
       this.$i18n.locale = locale;
+      localStorage.setItem(LS_KEY, locale);
     },
 
     getButtonClass(locale) {
