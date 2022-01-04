@@ -1,11 +1,14 @@
 <template>
   <div class="container">
     <div class="locale-changer">
-      <button :class="getButtonClass('en')" @click="changeLocale('en')">
-        EN
-      </button>
-      <button :class="getButtonClass('fr')" @click="changeLocale('fr')">
-        FR
+      <button
+        v-for="locale in supportedLocales"
+        :key="locale.code"
+        :class="getButtonClass(locale.code)"
+        @click="changeLocale(locale.code)"
+      >
+        <img :src="locale.flag" />
+        {{ locale.code.toUpperCase() }}
       </button>
     </div>
     <h1>{{ $t("greeting") }}</h1>
@@ -27,8 +30,15 @@
 </template>
 
 <script>
-const LS_KEY = "NUXT-I18N-LOCALE";
+import { LS_KEY, SUPPORTED_LOCALES } from "~/utils/constants";
+
 export default {
+  data() {
+    return {
+      supportedLocales: SUPPORTED_LOCALES,
+    };
+  },
+
   mounted() {
     let currentLocale = localStorage.getItem(LS_KEY);
     if (currentLocale != null) {
